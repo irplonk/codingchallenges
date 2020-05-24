@@ -45,6 +45,7 @@ public class MyArrayListTests {
     arrayList.remove(0);
   }
 
+  @Test
   public void remove_GivenElement_RemovesElement() {
     arrayList.add("strawberry");
     arrayList.add("blueberry");
@@ -54,6 +55,7 @@ public class MyArrayListTests {
     assertEquals(2, arrayList.size());
   }
 
+  @Test
   public void remove_GivenValidIndex_RemovesElement() {
     arrayList.add("strawberry");
     arrayList.add("blueberry");
