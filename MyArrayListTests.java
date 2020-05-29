@@ -6,11 +6,11 @@ import static org.junit.Assert.assertFalse;
 
 public class MyArrayListTests {
 
-  private MyArrayList arrayList;
+  private MyArrayList<String> arrayList;
 
   @Before
   public void setUp() {
-    arrayList = new MyArrayList<String>();
+    arrayList = new MyArrayList<>();
   }
 
   @Test
@@ -45,7 +45,6 @@ public class MyArrayListTests {
     arrayList.remove(0);
   }
 
-  @Test
   public void remove_GivenElement_RemovesElement() {
     arrayList.add("strawberry");
     arrayList.add("blueberry");
@@ -55,7 +54,6 @@ public class MyArrayListTests {
     assertEquals(2, arrayList.size());
   }
 
-  @Test
   public void remove_GivenValidIndex_RemovesElement() {
     arrayList.add("strawberry");
     arrayList.add("blueberry");
@@ -84,5 +82,22 @@ public class MyArrayListTests {
     assertEquals(2, arrayList.size());
     arrayList.clear();
     assertEquals(0, arrayList.size());
+  }
+
+  @Test
+  public void add_LotsOfElements_AddsAllElements() {
+    arrayList.add("strawberry");
+    arrayList.add("blueberry");
+    arrayList.add("raspberry");
+    arrayList.add("elderberry");
+    arrayList.add("blackberry");
+    arrayList.add("gooseberry");
+    arrayList.add("boysenberry");
+    arrayList.add("huckleberry");
+    arrayList.add("mulberry");
+    arrayList.add("wolfberry");
+    arrayList.add("youngberry");
+    assertEquals(11, arrayList.size());
+    assertEquals("youngberry", arrayList.get(10));
   }
 }
