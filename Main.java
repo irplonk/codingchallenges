@@ -1,3 +1,6 @@
+import java.util.Set;
+import java.util.HashSet;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -55,5 +58,17 @@ public class Main {
 	    }
 	    
 	    return mergedArray;
+	  }
+
+	  public static Integer firstReocurringNumber(int[] array) {
+	  	Set<Integer> numbersSoFar = new HashSet<>(array.length);
+	  	for (int i = 0; i < array.length; i++) {
+	  		if (numbersSoFar.contains(array[i])) {
+	  			return array[i];
+	  		}
+	  		numberSoFar.add(array[i]);
+
+	  	}
+	  	return null;
 	  }
 }
